@@ -1,0 +1,191 @@
+#login{
+
+
+	// position: absolute;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0%;
+	left: 0%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background: rgba(2, 6, 6, 0.745);
+	z-index: 1;
+	transition: all 500ms ease;
+	.login-field{
+
+	
+		// scale: 0;.
+		z-index: 1;
+		position: relative;
+		.decor_spell{
+			position: absolute;
+			z-index: -100;
+			// transform: translate(50%);
+			width: 250px;
+			height: 250px;
+			object-fit: contain;
+			scale: 3;
+			animation: spawn-spell 1s forwards, speen 52s infinite alternate linear;
+			user-select: none;
+			pointer-events: none;
+
+			@keyframes spawn-spell {
+				0%{
+					scale: 0;
+					rotate: 0deg;
+					opacity: 0;
+				}
+				100%{
+					rotate: 360deg;
+					scale: 3;
+					opacity: .3;
+				}
+			}
+		}
+		animation: open-up 1s forwards;
+		background: linear-gradient(180deg, rgba(40.52, 145.25, 151.94, 0.46) 0%, rgba(38.78, 54.29, 77.56, 0.15) 100%);
+		width: 100%;
+		.form-part{
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			transition: all 500ms ease;
+			opacity: 1;
+		}
+
+		.success-part{
+			text-align: center;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			p{
+				animation: cinematic 5s forwards;
+				font-size: 3rem;
+				padding: 2em 0;
+				letter-spacing: 0em;
+			}
+		
+		}
+		padding-bottom: 4em;
+		padding-top: 1em;
+		.title{
+
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			gap: 1em;
+			margin-top: 1em;
+			h2{
+				font-size: 2rem;
+				color: var(--blue);
+			}
+			.diamond{
+				width: 20px;
+				height: 20px;
+				border: 2px solid var(--blue);
+				rotate: 45deg;
+			}
+			.line{
+				width: 150px;
+				height: 1px;
+				background: var(--blue);
+			}
+		}
+
+		.sub-title{
+			font-size: 1;
+			padding: .25em;
+			letter-spacing: .5rem;
+			font-size: .8rem;
+			opacity: .4;
+		}
+
+		.password-field{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			gap: 5em;
+			animation: enter-input 1s alternate-reverse infinite ease;
+			.field-arrow.l{
+				rotate: 180deg;
+			}
+			.field-arrow{
+				scale: .5;
+
+			}
+			.field{
+				background: linear-gradient(180deg, rgba(110.94, 128.38, 190.19, 0.19) 0%, rgba(110.94, 128.38, 190.19, 0.13) 100%);
+				border-radius: 2em;
+				padding: .25em 5em;
+				margin: 1em 0;
+				min-width: 500px;
+				text-align: center;
+				
+				p{
+					font-size: 2rem;
+				}
+			}
+			@keyframes enter-input {
+				0%{
+					gap: 1em;
+				}
+				100%{
+					gap: 5em;
+				}
+			}
+		}
+
+		.action{
+			display: flex;
+			align-items: center;
+			gap: 1em;
+			.decor-block{
+				width: 20px;
+				height: 20px;
+				background: var(--blue);
+				
+			}
+			.fake-btn{
+				padding: .25em 1em;
+				font-family: var(--);
+				background: var(--blue);
+				font-size: 2rem;
+				font-weight: bolder;
+				letter-spacing: -2px;
+			}
+		}
+
+	}
+	&.end{
+		opacity: 0;
+		pointer-events: none;
+		user-select: none;
+	}
+	@keyframes cinematic {
+		0%{
+			letter-spacing: 0em;
+			opacity: 0;
+			scale: .8;
+		}
+		100%{
+			letter-spacing: 1em;
+			scale: 1.2;
+			opacity: 1;
+		}
+	}
+}
+
+@keyframes open-up {
+	0%{
+		scale: 1 0;
+		opacity: 0;
+	}
+	100%{
+		opacity: 1;
+		scale: 1 1;
+	}
+}
+
