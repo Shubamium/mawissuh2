@@ -1,8 +1,10 @@
+import Login from "./components/login/Login"
 
 export default function Home() {
   return (
     <main className={'home'}>
-			<h2>hey</h2>
+			<Login/>
+			<h2>Main Menu Selection</h2>
     </main>
   );
 }
