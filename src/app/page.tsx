@@ -1,10 +1,8 @@
-import Image from "next/image";
 import Login from "./components/login/Login";
 
 export default function Home() {
   return (
-    <main className={'w'}>
-
+    <main className={'home'}>
 			<Login/>
     </main>
   );

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import {  Karla, Poppins } from "next/font/google";
+import {  Karla } from "next/font/google";
 import "./globals.scss";
 import Header from "./components/header/Header";
 import { CSSProperties } from "react";

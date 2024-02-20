@@ -9,6 +9,7 @@ export default function Login({}: Props) {
 	const [isLogin, setIsLogin] = useState(false);
 	const [isEnd, setIsEnd] = useState(false);
 	const password = useRef(null);
+	
 	useEffect(()=>{
 		setTimeout(()=>{
 			const passwordTypingDelay = 100
