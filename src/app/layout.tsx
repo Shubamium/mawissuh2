@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import {  Karla } from "next/font/google";
-import "./globals.scss";
 import Header from "./components/header/Header";
 import { CSSProperties } from "react";
+import "./globals.scss";
 
 const karla = Karla({ subsets: ["latin"],weight:['200','300','400','500','600','700','800'] });
 
