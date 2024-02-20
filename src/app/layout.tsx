@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import {  Karla } from "next/font/google";
-import Header from "./components/header/Header";
 import { CSSProperties } from "react";
-import "./globals.scss";
 
 const karla = Karla({ subsets: ["latin"],weight:['200','300','400','500','600','700','800'] });
 
@@ -19,7 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={karla.className} style={{'--fontMain':karla.style.fontFamily} as CSSProperties}>
-				<Header/>
+				{/* <Header/> */}
 				{children}
 			</body>
     </html>
