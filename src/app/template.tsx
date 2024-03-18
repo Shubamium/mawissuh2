@@ -9,8 +9,8 @@ type Props = {
 
 export default function Template({children}: Props) {
 		useEffect(()=>{
-			console.log('heyaaa')
-		})
+			// console.log('heyaaa')
+		},[])
 	const pathname = usePathname();
 	return (
 		<>
