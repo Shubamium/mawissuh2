@@ -1,13 +1,17 @@
 import React from 'react'
 import './investigator.scss'
 import Link from 'next/link'
+import { FcStart } from 'react-icons/fc'
+import { BsStar, BsStarFill } from 'react-icons/bs'
 
 type Props = {}
 export default function Investigator({}: Props) {
 	return (
 		<main id='page_investigator'>
-				<article className="title-card">
-					<h2>ACTIVE INVESTIGATOR</h2>
+				<article className="section-title-card">
+					<div className="title">
+						<h2>ACTIVE INVESTIGATOR</h2> <BsStarFill/><BsStarFill/><BsStarFill/>
+					</div>
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vene</p>
 				</article>
 				<div className="investigator-list">

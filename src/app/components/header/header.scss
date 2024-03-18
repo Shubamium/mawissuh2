@@ -5,14 +5,16 @@
 	position: relative;
 	.decor_stroke{
 		position: absolute;
-		right: 115%;
+		right: 103%;
 		top: 10%;
 		.rect{
-			width: 20px;
-			height: 20px;
+			width: 15px;
+			height: 15px;
 			background: white;
 			rotate: 45deg;
+			transition: all 300ms ease;
 		}
+
 		display: flex;
 		align-items: center;
 		flex-direction: column;
@@ -35,6 +37,16 @@
 		display: flex;
 		gap: 2em;
 		align-items: center;
+		min-width: 50vw;
+		&:hover{
+			.decor_stroke{
+				.rect{
+					outline: 2px solid #FFBB02;
+					outline-offset: 4px;
+					animation: speen 20s linear infinite forwards;
+				}
+			}
+		}
 		.nav-btn{
 			text-decoration: none;
 			color: white;

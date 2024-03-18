@@ -8,10 +8,18 @@ html{
 	height: 100%;
 
 }
+@font-face {
+	font-family: 'rune';
+	src: url('/fonts/rune-font.TTF');
+}
 :root{
 	--blue:#56D9FF;
+	--fontRune: 'rune';
 }
 
+.rune-text{
+	font-family: var(--fontRune);
+}
 body{
 
 	color: white;
@@ -102,6 +110,32 @@ button,.btn{
 	mix-blend-mode: overlay;
 	z-index: -10;
 	position: fixed;
+}
+
+.section-title-card{
+	.title{
+		display:flex;
+		align-items: center;
+		gap: 1em;
+		font-size: 2rem;
+		line-height: 120%;
+		&::before{
+			content: '';
+			display: block;
+			width: 20px;
+			position: absolute;
+			height: 20px;
+			scale: 3;
+			background: #435067;
+			z-index: -1;
+			// border-radius: 50%;
+		}
+	}
+	p{
+		opacity: .5;
+		padding: 2em 0;
+		font-size: 1.2rem;
+	}
 }
 .glow{
 	box-shadow: 0px 0px 4px #56daff90;
