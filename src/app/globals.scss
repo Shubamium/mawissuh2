@@ -13,31 +13,153 @@ html{
 }
 
 body{
-	height: 100%;
-	width: 100%;
-	background: url('/backgrounds/texture.png'),linear-gradient(#222432 0%, #090910fb 100%);
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-blend-mode: multiply;
+
 	color: white;
 	font-family: var(--fontMain);
+	&::before{
+		background: url('/backgrounds/texture.png'),linear-gradient(#222432 0%, #090910fb 100%);
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-blend-mode: multiply;
+		content:'';
+		position:fixed;
+		top:0%;
+		left:0%;
+		width:100%;
+		height:100%;
+		z-index: -50;
+		user-select: none;
+		pointer-events: none;
+	}
 }
 
-button{
+button,.btn{
 	font-family: var(--fontMain);
 	border: none;
 	background: none;
 
+	transition: all 250ms ease;
+	&:active{
+		scale: .95;
+	}
+	&:hover{
+		scale: 1.05;
+	}
+
+}
+.main-container{
+	// display: flex;
+	// height: 100%;
+	min-height: 100vh;
+	max-width: 100vw;
+
+	padding-bottom: 200px;
+	overflow-x: hidden;
+	& > div{
+		// height: 100%;
+	}
 }
 
+.slide{
+	position: fixed;
+	z-index: 1000;
+	width: 150%;
+	height: 100%;
+	scale: 5 1;
+	rotate: -40deg;
+	top: 0;
+	background:#323338;
+	left: 0%;
+	outline: 2px solid #323338;
+	outline-offset: 10px;
+	z-index: 10;
+}
 
+.decor_bg-badge{
+	position:fixed;
+	width: 100vw;
+	height: 100vh;
+	top: -10%;
+	left: 0%;
+	user-select: none;
+	pointer-events: none;
+	object-fit: contain;
+	scale: 0.8;
+	mix-blend-mode: overlay;
+	opacity: .15;
+	animation: jitter 10s  steps(10) infinite;
+	
+	&.glitched{
+		animation: noise-anim 10s steps(4) infinite;
+		mix-blend-mode: normal;
+		// position: relative;
+		left: 5%;
+		filter:  sepia(80%) hue-rotate(180deg);
+	}
+}
+.decor_badges{
+	opacity: .7;
+	mix-blend-mode: overlay;
+	z-index: -10;
+	position: fixed;
+}
+.glow{
+	box-shadow: 0px 0px 4px #56daff90;
+}
+.glow-filter{
+	filter:drop-shadow( 0px 0px 5px #56daff90);
+}
+.glow-text{
+	text-shadow: 0px 0px 4px #56daff90;
+}
+@keyframes jitter {
+	0%{
+		opacity: 0.1;
+		scale: 0.85;
+	}
+	20%{
+		opacity: 0.2;
+	}
+	30%{
+		opacity: 0.3;
+	}
+	50%{
+		opacity: 0.05;
+		scale: 0.85;
+
+	}
+	80%{
+		opacity: 0.2;
+	}
+	100%{
+		opacity: 0.02;
+	}
+}
+@keyframes noise-anim {
+  0% {
+    clip-path: inset(40% 0 61% 0);
+  }
+  20% {
+    clip-path: inset(92% 0 1% 0);
+  }
+  40% {
+    clip-path: inset(43% 0 1% 0);
+  }
+  60% {
+    clip-path: inset(25% 0 58% 0);
+  }
+  80% {
+    clip-path: inset(54% 0 7% 0);
+  }
+  100% {
+    clip-path: inset(58% 0 43% 0);
+  }
+}
 @keyframes speen {
 	0%{
-		// transform: rotateY(0turn) perspective(200px);
 		transform: rotateZ(0turn) perspective(200px);
 	}
 	100%{
 		transform: rotateZ(5turn) perspective(200px);
-		// transform: rotateY(1turn) rotateX(.75turn) perspective(200px);
 	}
 }
