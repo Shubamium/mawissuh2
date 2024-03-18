@@ -22,43 +22,43 @@ export default function Entry({}: Props) {
 							<h2>ACTIVE</h2>
 						</div>
 						<div className="active-entry-list">
-								<Link href={'/entry/user'} className="active-entry-card">
+								<Link href={'/entry-detail/user'} className="active-entry-card">
 										<img src="/graphics/entry_placeholder.webp" alt="" className='pfp' />
 										<span className='name'>Person Name</span>
 										<span className='decor_overlay'></span>
 										<span className='decor-line'></span>
 								</Link>
-								<Link href={'/entry/user'} className="active-entry-card">
+								<Link href={'/entry-detail/user'} className="active-entry-card">
 										<img src="/graphics/entry_placeholder.webp" alt="" className='pfp' />
 										<span className='name'>Person Name</span>
 										<span className='decor_overlay'></span>
 										<span className='decor-line'></span>
 								</Link>
-								<Link href={'/entry/user'} className="active-entry-card">
+								<Link href={'/entry-detail/user'} className="active-entry-card">
 										<img src="/graphics/entry_placeholder.webp" alt="" className='pfp' />
 										<span className='name'>Person Name</span>
 										<span className='decor_overlay'></span>
 										<span className='decor-line'></span>
 								</Link>
-								<Link href={'/entry/user'} className="active-entry-card">
+								<Link href={'/entry-detail/user'} className="active-entry-card">
 										<img src="/graphics/entry_placeholder.webp" alt="" className='pfp' />
 										<span className='name'>Person Name</span>
 										<span className='decor_overlay'></span>
 										<span className='decor-line'></span>
 								</Link>
-								<Link href={'/entry/user'} className="active-entry-card">
+								<Link href={'/entry-detail/user'} className="active-entry-card">
 										<img src="/graphics/entry_placeholder.webp" alt="" className='pfp' />
 										<span className='name'>Person Name</span>
 										<span className='decor_overlay'></span>
 										<span className='decor-line'></span>
 								</Link>
-								<Link href={'/entry/user'} className="active-entry-card">
+								<Link href={'/entry-detail/user'} className="active-entry-card">
 										<img src="/graphics/entry_placeholder.webp" alt="" className='pfp' />
 										<span className='name'>Person Name</span>
 										<span className='decor_overlay'></span>
 										<span className='decor-line'></span>
 								</Link>
-								<Link href={'/entry/user'} className="active-entry-card no-access">
+								<Link href={'/entry-detail/user'} className="active-entry-card no-access">
 									<span className='logo'>
 										<img src="/decors/rune_higher.png" alt="" className='decor_rune' />
 										<TbLockAccessOff/>
@@ -67,7 +67,7 @@ export default function Entry({}: Props) {
 									<span className='title'>- ACCESS DENIED -</span>
 									<span className='tier-text'><span className='tier'>TIER 3</span> Clearance is needed</span>
 								</Link>
-								<Link href={'/entry/user'} className="active-entry-card no-access">
+								<Link href={'/entry-detail/user'} className="active-entry-card no-access">
 									<span className='logo'>
 										<img src="/decors/rune_higher.png" alt="" className='decor_rune' />
 										<TbLockAccessOff/>
@@ -83,25 +83,25 @@ export default function Entry({}: Props) {
 							<h2>INACTIVE</h2>
 						</div>
 						<div className="active-entry-list inactive">
-								<Link href={'/entry/user'} className="active-entry-card inactive">
+								<Link href={'/entry-detail/user'} className="active-entry-card inactive">
 										<img src="/graphics/entry_placeholder.webp" alt="" className='pfp' />
 										<span className='name'>Person Name</span>
 										<span className='decor_overlay'></span>
 										<span className='decor-line'></span>
 								</Link>
-								<Link href={'/entry/user'} className="active-entry-card inactive">
+								<Link href={'/entry-detail/user'} className="active-entry-card inactive">
 										<img src="/graphics/entry_placeholder.webp" alt="" className='pfp' />
 										<span className='name'>Person Name</span>
 										<span className='decor_overlay'></span>
 										<span className='decor-line'></span>
 								</Link>
-								<Link href={'/entry/user'} className="active-entry-card inactive">
+								<Link href={'/entry-detail/user'} className="active-entry-card inactive">
 										<img src="/graphics/entry_placeholder.webp" alt="" className='pfp' />
 										<span className='name'>Person Name</span>
 										<span className='decor_overlay'></span>
 										<span className='decor-line'></span>
 								</Link>
-								<Link href={'/entry/user'} className="active-entry-card inactive no-access">
+								<Link href={'/entry-detail/user'} className="active-entry-card inactive no-access">
 									<span className='logo'>
 										<img src="/decors/rune_higher.png" alt="" className='decor_rune' />
 										<TbLockAccessOff/>
@@ -109,7 +109,7 @@ export default function Entry({}: Props) {
 									<span className='title'>- ACCESS DENIED -</span>
 									<span className='tier-text'><span className='tier'>TIER 3</span> CLEARANCE NEEDED</span>
 								</Link>
-								<Link href={'/entry/user'} className="active-entry-card inactive no-access">
+								<Link href={'/entry-detail/user'} className="active-entry-card inactive no-access">
 									<span className='logo'>
 										<img src="/decors/rune_higher.png" alt="" className='decor_rune' />
 										<TbLockAccessOff/>
@@ -117,7 +117,7 @@ export default function Entry({}: Props) {
 									<span className='title'>- ACCESS DENIED -</span>
 									<span className='tier-text'><span className='tier'>TIER 3</span> CLEARANCE NEEDED</span>
 								</Link>
-								<Link href={'/entry/user'} className="active-entry-card inactive no-access">
+								<Link href={'/entry-detail/user'} className="active-entry-card inactive no-access">
 									<span className='logo'>
 										<img src="/decors/rune_higher.png" alt="" className='decor_rune' />
 										<TbLockAccessOff/>
@@ -125,7 +125,7 @@ export default function Entry({}: Props) {
 									<span className='title'>- ACCESS DENIED -</span>
 									<span className='tier-text'><span className='tier'>TIER 3</span> CLEARANCE NEEDED</span>
 								</Link>
-								<Link href={'/entry/user'} className="active-entry-card inactive no-access">
+								<Link href={'/entry-detail/user'} className="active-entry-card inactive no-access">
 									<span className='logo'>
 										<img src="/decors/rune_higher.png" alt="" className='decor_rune' />
 										<TbLockAccessOff/>
@@ -133,7 +133,7 @@ export default function Entry({}: Props) {
 									<span className='title'>- ACCESS DENIED -</span>
 									<span className='tier-text'><span className='tier'>TIER 3</span> CLEARANCE NEEDED</span>
 								</Link>
-								<Link href={'/entry/user'} className="active-entry-card inactive no-access">
+								<Link href={'/entry-detail/user'} className="active-entry-card inactive no-access">
 									<span className='logo'>
 										<img src="/decors/rune_higher.png" alt="" className='decor_rune' />
 										<TbLockAccessOff/>

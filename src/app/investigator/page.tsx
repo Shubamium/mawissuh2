@@ -27,7 +27,7 @@ export default function Investigator({}: Props) {
 									<hr />
 									<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel delectus recusandae repellat quos sint quam dolorem eveniet inventore maxime at optio suscipit voluptatibus odio und.</p>
 									<div className="action">
-											<Link href='/investigator/marissa' className="btn btn-view">View</Link>
+											<Link href='/profile/marissa' className="btn btn-view">View</Link>
 									</div>
 								</div>
 						</div>
