@@ -14,7 +14,7 @@ export default function Header({}: Props) {
 					<div className="rect"></div>
 					<div className="line"></div>
 				</div>
-				<Link className='nav-btn' href={'/'}>MENU</Link>
+				<Link className='nav-btn' href={'/profile/marissa'}>INVESTIGATOR</Link>
 				<Link className='nav-btn' href={'/entry'}>ENTRY</Link>
 				
 			</nav>

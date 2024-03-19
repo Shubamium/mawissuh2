@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <main className={'home'} id='page_home'>
 			<div className="logo-part">
-				<video src="/graphics/main-logotrans.webm"  className='logo-animation glow-filter' autoPlay loop />
+				<video src="/graphics/marilogo750m.webm"  className='logo-animation glow-filter' autoPlay loop />
 			</div>
 			<article className="welcome-part glow-filter">
 				<h2> <strong>Welcome,</strong>  user001 </h2>

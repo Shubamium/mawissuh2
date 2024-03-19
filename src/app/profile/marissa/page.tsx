@@ -7,7 +7,7 @@ import { MdAssignment } from 'react-icons/md'
 import { TbPointerHeart } from 'react-icons/tb'
 import { AiOutlinePartition } from 'react-icons/ai'
 import Rules from './rules/Rules'
-import ServiceAssing from './serviceAssign/ServiceAssign'
+import ServiceAssign from './serviceAssign/ServiceAssign'
 type Props = {}
 
 export default function page({}: Props) {
@@ -30,19 +30,23 @@ export default function page({}: Props) {
 							</p>
 							<div className="mini-info-list">
 								<div className="info">
+									<h2>YEARS OF SERVICE</h2>
+									<p>2 YEARS</p>
+								</div>
+								{/* <div className="info">
 									<h2>CODENAME</h2>
 									<p>MAW1S2H</p>
 								</div>
 								<div className="info">
 									<h2>ACTIVE</h2>
 									<p>???</p>
-								</div>
-								<div className="info">
+								</div> */}
+								{/* <div className="info">
 									<h2>ACCESS LEVEL</h2>
 									<div className="star-list">
 										<GoStarFill/>	<GoStarFill/>	<GoStarFill/>	<GoStarFill className='dim'/>	<GoStarFill className='dim'/>
 									</div>
-								</div>
+								</div> */}
 							</div>
 					</article>
 					<figure className='img-part'>
@@ -314,7 +318,7 @@ export default function page({}: Props) {
 				</section>
 				
 				<Rules/>
-				<ServiceAssing/>
+				<ServiceAssign/>
 		</main>
 	)
 }

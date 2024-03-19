@@ -17,7 +17,7 @@ export default function page({}: Props) {
 									</div>
 								</div>
 								<div className="entry-info">
-									<p className='handles'> @ HANDLES</p>
+									{/* <p className='handles'> @ HANDLES</p> */}
 									<div className="name">
 										<hr />
 										<p>PERSON NAME</p>
