@@ -45,7 +45,7 @@ button,.btn{
 	font-family: var(--fontMain);
 	border: none;
 	background: none;
-
+	cursor: pointer;
 	transition: all 250ms ease;
 	&:active{
 		scale: .95;
