@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 
 import './serviceAssign.scss'
 import MainService from './mainService/MainService'
+import OtherService from './otherService/OtherService'
 type Props = {}
 
 export default function ServiceAssign({}: Props) {
@@ -26,7 +27,8 @@ export default function ServiceAssign({}: Props) {
 								</button>
 							</div>
 							{
-								activeMenu === -1 ? <MainService/> : null
+								activeMenu === -1 ? <MainService/> : 
+								<OtherService/>
 							}
 						</div>
 				</section>

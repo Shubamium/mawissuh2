@@ -25,6 +25,7 @@
 			display: flex;
 			gap: 1em;
 			.btn-service{
+			
 				background: #393B50;
 				color: #1B2230;
 				padding: .15em 1em;
@@ -36,6 +37,11 @@
 					color: #0A0E13;
 					background: #FFBB02;
 					box-shadow: 0px 0px 8px 2px #ffbc02c5;
+					&:first-of-type{
+						background: #56D9FF;
+						box-shadow: 0px 0px 8px 2px #56daff77;
+
+					}
 				}
 			}
 		}
