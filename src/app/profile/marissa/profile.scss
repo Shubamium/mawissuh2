@@ -109,6 +109,8 @@
 				position: absolute;
 				top: 0%;
 				right: 0%;
+				pointer-events:none;
+				user-select:none;
 				width: 50vw;
 				height: 100%;
 				max-width: initial;

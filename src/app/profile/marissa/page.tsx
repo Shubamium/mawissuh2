@@ -33,6 +33,14 @@ export default function page({}: Props) {
 									<h2>YEARS OF SERVICE</h2>
 									<p>2 YEARS</p>
 								</div>
+								<div className="info">
+									<h2>???</h2>
+									<p> ? ? ?</p>
+								</div>
+								<div className="info">
+									<h2>??? </h2>
+									<p className='rune-text'> BCMEJR$RRS</p>
+								</div>
 								{/* <div className="info">
 									<h2>CODENAME</h2>
 									<p>MAW1S2H</p>
