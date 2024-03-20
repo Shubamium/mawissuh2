@@ -71,62 +71,125 @@ export default function page({}: Props) {
 							</div>
 
 							<div className="profile-title confine">
-								<div className="title">
-									<h2>INVESTIGATOR PROFILE</h2>
-								</div>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-							</div>
-
-							<div className="profile-info-list">
-								<div className="confine">
-									<div className="info-list">
-										<div className="info">
-											<h2>NAME</h2>
-											<p>FULL NAME</p>
+								<article>
+									<div className="main-text">
+										<div className="title">
+											<h2>INVESTIGATOR PROFILE</h2>
 										</div>
-										<div className="info">
-											<h2>NAME</h2>
-											<p>FULL NAME</p>
-										</div>
-										<div className="info">
-											<h2>NAME</h2>
-											<p>FULL NAME</p>
-										</div>
-										<div className="info">
-											<h2>NAME</h2>
-											<p>FULL NAME</p>
-										</div>
-										<div className="info">
-											<h2>NAME</h2>
-											<p>FULL NAME</p>
-										</div>
-										<div className="info">
-											<h2>NAME</h2>
-											<p>FULL NAME</p>
-										</div>
-										<div className="info">
-											<h2>NAME</h2>
-											<p>FULL NAME</p>
-										</div>
-										<div className="info">
-											<h2>NAME</h2>
-											<p>FULL NAME</p>
-										</div>
-										<div className="info">
-											<h2>NAME</h2>
-											<p>FULL NAME</p>
-										</div>
+										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
 									</div>
-
-									<figure className='pfp'>
+									<div className="additional-detail">
+										<div className="detail">
+												<h2>DETAIL</h2>
+												<p>Other Detail</p>
+											</div>
+											<div className="contact-list">
+												<a href="#" target='_blank' className='contact'>
+													<FaTwitter/>
+												</a>
+												<a href="#" target='_blank' className='contact'>
+													<FaTwitter/>
+												</a>
+												<a href="#" target='_blank' className='contact'>
+													<FaTwitter/>
+												</a>
+												<a href="#" target='_blank' className='contact'>
+													<MdAssignment/>
+												</a>
+												<a href="#" target='_blank' className='contact'>
+													<TbPointerHeart/>
+												</a>
+												<a href="#" target='_blank' className='contact'>
+													<AiOutlinePartition/>
+												</a>
+											</div>
+									</div>
+								</article>
+								<figure className='pfp'>
 										<div className="logo">
 											<img src="/graphics/profile-placeholder.jpg" alt=""  className='pfp'/>
 										</div>
 									</figure>
+							</div>
+
+							<div className="profile-info-list">
+								<div className="confine">
+									{/* <div className="info-list">
+										<div className="info">
+											<h2>NAME</h2>
+											<p>FULL NAME</p>
+										</div>
+										<div className="info">
+											<h2>NAME</h2>
+											<p>FULL NAME</p>
+										</div>
+										<div className="info">
+											<h2>NAME</h2>
+											<p>FULL NAME</p>
+										</div>
+										<div className="info">
+											<h2>NAME</h2>
+											<p>FULL NAME</p>
+										</div>
+										<div className="info">
+											<h2>NAME</h2>
+											<p>FULL NAME</p>
+										</div>
+										<div className="info">
+											<h2>NAME</h2>
+											<p>FULL NAME</p>
+										</div>
+										<div className="info">
+											<h2>NAME</h2>
+											<p>FULL NAME</p>
+										</div>
+										<div className="info">
+											<h2>NAME</h2>
+											<p>FULL NAME</p>
+										</div>
+										<div className="info">
+											<h2>NAME</h2>
+											<p>FULL NAME</p>
+										</div>
+									</div> */}
+								<div className="activity-log">
+										<div className="log-title">
+												<h2>ACTIVITY <br/> LOG</h2>
+												<p>MILESTONES</p>
+										</div>
+										<div className="log-list">
+												<div className="log">
+													<h2>ACHIEVEMENTS</h2>
+													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vene</p>
+												</div>
+												<div className="log">
+													<h2>ACHIEVEMENTS</h2>
+													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vene</p>
+												</div>
+								
+												<div className="log">
+													<h2>ACHIEVEMENTS</h2>
+													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vene</p>
+												</div>
+												<div className="log">
+													<h2>ACHIEVEMENTS</h2>
+													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vene</p>
+												</div>
+												<div className="log">
+													<h2>ACHIEVEMENTS</h2>
+													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vene</p>
+												</div>
+												<div className="log">
+													<h2>ACHIEVEMENTS</h2>
+													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vene</p>
+												</div>
+										</div>
+								</div>
+								
 								</div>
 							</div>
 
-							<div className="additional-info">
+							{/* <div className="additional-info">
 								<div className="confine">
 									<div className="left">
 										<div className="title">
@@ -140,69 +203,12 @@ export default function page({}: Props) {
 										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vene.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vene.</p>
 									</div>
 									<div className="right">
-										<div className="detail">
-											<h2>DETAIL</h2>
-											<p>Other Detail</p>
-										</div>
-										<div className="contact-list">
-											<a href="#" target='_blank' className='contact'>
-												<FaTwitter/>
-											</a>
-											<a href="#" target='_blank' className='contact'>
-												<FaTwitter/>
-											</a>
-											<a href="#" target='_blank' className='contact'>
-												<FaTwitter/>
-											</a>
-											<a href="#" target='_blank' className='contact'>
-												<MdAssignment/>
-											</a>
-											<a href="#" target='_blank' className='contact'>
-												<TbPointerHeart/>
-											</a>
-											<a href="#" target='_blank' className='contact'>
-												<AiOutlinePartition/>
-											</a>
-										</div>
+								
 									</div>
 								</div>
-							</div>
+							</div> */}
 
-							<div className="activity-log">
-								<div className="confine">
-									<div className="log-title">
-											<h2>ACTIVITY <br/> LOG</h2>
-											<p>MILESTONES</p>
-									</div>
-									<div className="log-list">
-											<div className="log">
-												<h2>ACHIEVEMENTS</h2>
-												<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vene</p>
-											</div>
-											<div className="log">
-												<h2>ACHIEVEMENTS</h2>
-												<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vene</p>
-											</div>
-							
-											<div className="log">
-												<h2>ACHIEVEMENTS</h2>
-												<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vene</p>
-											</div>
-											<div className="log">
-												<h2>ACHIEVEMENTS</h2>
-												<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vene</p>
-											</div>
-											<div className="log">
-												<h2>ACHIEVEMENTS</h2>
-												<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vene</p>
-											</div>
-											<div className="log">
-												<h2>ACHIEVEMENTS</h2>
-												<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vene</p>
-											</div>
-									</div>
-								</div>
-							</div>
+				
 				</section>
 
 
