@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 import './serviceAssign.scss'
 import MainService, { MainServiceData } from './mainService/MainService'
 import OtherService from './otherService/OtherService'
+import { AnimatePresence } from 'framer-motion'
 type Props = {
 	mainService:MainServiceData,
 	otherService:OtherServiceData[],
@@ -45,10 +46,12 @@ export default function ServiceAssign({mainService,otherService}: Props) {
 									EXPERIMENTAL
 								</button> */}
 							</div>
-							{
-								activeMenu === -1 ? <MainService {...mainService}/> : 
-								<OtherService list={otherService[activeMenu].services}  />
-							}
+							<AnimatePresence mode='wait'>
+								{
+									activeMenu === -1 ? <MainService {...mainService}/> : 
+									<OtherService categoryId={otherService[activeMenu].title} list={otherService[activeMenu].services}  />
+								}
+							</AnimatePresence>
 						</div>
 				</section>
 				<div className="assign-edge">

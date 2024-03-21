@@ -5,7 +5,7 @@ type Props = {
 	ruleList:RulesCategory[]
 }
 
-
+import {AnimatePresence, motion } from 'framer-motion'
 // const ruleList:RulesCategory[] = [
 // 	{
 // 		title:'Payment',
@@ -98,14 +98,21 @@ export default function Rules({ruleList}: Props) {
 			</div>
 			<div className="main-rules confine">
 				<div className="rules-list">
-					{ruleList[activeRule].rules?.map((rulei,index)=>{
-						return 		<div className="rules-card" key={'rule-card'+index}>
-						<div className="rules-panel">
-							<h2>{rulei.title}</h2>
-							<p>{rulei.description}</p>
-						</div>
-					</div>
-					})}
+					<AnimatePresence mode='wait'>
+						{ruleList[activeRule].rules?.map((rulei,index)=>{
+							return 		<motion.div
+							initial={{x:-100,opacity:0}}
+							animate={{x:0,opacity:1}}
+							exit={{x:100,opacity:0}}
+							transition={{duration:0.5,delay:(index+1)*0.1}}
+							className="rules-card" key={'rule-card'+activeRule+'-'+index}>
+							<div className="rules-panel">               
+								<h2>{rulei.title}</h2>
+								<p>{rulei.description}</p>
+							</div>
+						</motion.div>
+						})}
+					</AnimatePresence>
 					{/* <div className="rules-card">
 						<div className="rules-panel">
 							<h2>RULES TITLE</h2>
@@ -130,17 +137,18 @@ export default function Rules({ruleList}: Props) {
 						<div className="rule-list">
 							{ruleList.map((rule,index)=>{
 								return <button 
-									key={'rule-list'+index}
-									onClick={()=>setActiveRule(index)}
-									className={`btn btn-rule ${activeRule === index ? 'active' : ''}`}>
-									<div className="text">
-											{rule.name}
-									</div>
-									<div className="decor-bottom">
-										<div className="lis l"></div>
-										<div className="lis r"></div>
-									</div>
-							</button>
+											
+											key={'rule-list'+index}
+											onClick={()=>setActiveRule(index)}
+											className={`btn btn-rule ${activeRule === index ? 'active' : ''}`}>
+										<div className="text">
+												{rule.name}
+										</div>
+										<div className="decor-bottom">
+											<div className="lis l"></div>
+											<div className="lis r"></div>
+										</div>
+								</button>
 							})}
 						</div>
 					</div>

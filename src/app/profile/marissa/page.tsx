@@ -144,6 +144,7 @@ export default async function page({}: Props) {
 					</article>
 					<figure className='img-part'>
 						<img src="/graphics/hero-art.png" alt="" className='hero-art' />
+						<img src="/decors/giant-circle.png" alt="" className='decor_spell' />
 					</figure>
 				</section>
 

@@ -1,8 +1,9 @@
+'use client'
 import React from 'react'
 import { FaPlay, FaPlus } from 'react-icons/fa'
 import { ImCheckmark } from 'react-icons/im'
 type Props = {}
-
+import {motion} from 'framer-motion'
 export type MainServiceData = {
 	title:string;
 	description:string;
@@ -20,7 +21,13 @@ export default function MainService({
 	includes
 }: MainServiceData) {
 	return (
-		<div className="service-main">
+		<motion.div 
+			initial={{opacity:0,y:200}}
+			animate={{opacity:1,y:0}}
+			exit={{opacity:0,y:-200}}
+			transition={{duration:0.5}}
+		key={'service-main'}
+		className="service-main">
 			<div className="include-list">
 				<div className="include-title">
 					<p className='rune-text'>AONE</p>
@@ -29,7 +36,12 @@ export default function MainService({
 				</div>
 				<div className="includes">
 					{includes.map((item,index) => {
-						return 				<div className="include" key={'include-list'+index}>
+						return 				<motion.div
+						initial={{scale:0,opacity:0}}
+						animate={{scale:1,opacity:1}}
+						transition={{duration:0.2,delay:(index+1)*0.2}}
+						style={{transformOrigin:'left'}}
+						className="include" key={'include-list'+index}>
 						<div className="icon">
 							<img src="/decors/include-edge.svg" alt="" className='icon-edge' />
 							<ImCheckmark/>
@@ -37,7 +49,7 @@ export default function MainService({
 						<div className="text-part">
 							<p>{item}</p>
 						</div>
-					</div>
+					</motion.div>
 					})}
 					{/* <div className="include">
 						<div className="icon">
@@ -113,6 +125,6 @@ export default function MainService({
 					</p>
 				</div>
 			</div>
-		</div>
+		</motion.div>
 	)
 }

@@ -12,6 +12,21 @@
 	padding-top: 6vh;
 	z-index: -50;
 	transition: all 500ms ease;
+
+	.decor_top-circle{
+		position: fixed;
+		right: calc(0% - 150px);
+		object-fit: contain;
+		width: 350px;
+		height: 350px;
+		// background: red;
+		// opacity: 1;
+		// transition: all;
+		top: calc(0% - 150px);
+		animation: speen 70s infinite reverse linear ;
+		filter: drop-shadow(2px 2px 4px #FFBB02);
+	}
+	
 	.title-container{
 		text-align: center;
 

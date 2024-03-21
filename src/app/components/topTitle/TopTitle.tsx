@@ -11,6 +11,7 @@ export default function TopTitle({
 }: Props) {
 	return (
 		<div className='top-title'>
+			<motion.img initial={{opacity:0,y:-100}} animate={{opacity:1,y:0}} transition={{duration:1,delay:1.2}} src="/decors/decor_watchcircle.png" alt="" className='decor_top-circle' />
 			<motion.div initial={{opacity:0,y:-100}} animate={{opacity:1,y:0}} transition={{duration:1,delay:1.5}} className="title-container">
 				<div className="icon">
 					<svg width="59" height="51" viewBox="0 0 59 51" fill="none" xmlns="http://www.w3.org/2000/svg">
