@@ -9,7 +9,7 @@ type Props = {}
 
 interface Social {
   icon: string; // Assuming the icon is a URL to an image
-  link: string; // Assuming the link is a URL
+  link: any; // Assuming the link is a URL
 }
 
 interface Talent {

@@ -1,7 +1,9 @@
 'use client'
 import React, { useState } from 'react'
 
-type Props = {}
+type Props = {
+	videoId:string
+}
 
 const spells:string[] = [
 	'OKCENUAHDOMBYVHFG',
@@ -9,7 +11,9 @@ const spells:string[] = [
 	'pUTNNVNN BZOKKEU e',
 	'OKCENUAHDOM YVHFG'
 ]
-export default function Surveillance({}: Props) {
+export default function Surveillance({
+	videoId
+}: Props) {
 	const [isCasted,setIsCasted] = useState(false);
 	// const [toRenderSpell,setToRenderSpell] = useState<string[]>([]);
 	return (
@@ -44,7 +48,7 @@ export default function Surveillance({}: Props) {
 							<img src="/decors/small_rune.png" alt="" className='decor_btn-rune' />
 						</button>
 					</div>
-					<iframe className='vid-frame' src="https://www.youtube.com/embed/NfhJK602XdE" frameBorder={0}></iframe>
+					<iframe className='vid-frame' src={`https://www.youtube.com/embed/${videoId}`} frameBorder={0}></iframe>
 				</div>
 			</div>
 	)
