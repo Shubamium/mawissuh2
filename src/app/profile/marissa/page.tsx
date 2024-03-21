@@ -9,9 +9,37 @@ import { AiOutlinePartition } from 'react-icons/ai'
 import Rules from './rules/Rules'
 import ServiceAssign from './serviceAssign/ServiceAssign'
 import Sidebar from './sidebar/Sidebar'
+import { fetchData } from '@/db/db'
 type Props = {}
 
-export default function page({}: Props) {
+export default async function page({}: Props) {
+	const generalData = await fetchData<any[]>(`
+		*[_type == 'general' && preset == 'main'] {
+			preset,
+			main_service {
+				title,
+				description,
+				price,
+				rate,
+				unit,
+				includes
+			}
+		}
+	`);
+	const otherService = await fetchData<any[]>(`
+		*[_type == 'other_service'] {
+			title,
+			services[] {
+				title,
+				description,
+				price,
+				rate,
+				unit
+			}
+		}
+	`);
+	const mainGeneral = generalData[0] 
+	// console.log(otherService)
 	return (
 		<main id='page_profile-main'>
 				<section className="hero-section" id='intro'>
@@ -332,7 +360,7 @@ export default function page({}: Props) {
 				</section>
 				
 				<Rules/>
-				<ServiceAssign/>
+				<ServiceAssign otherService={otherService} mainService={mainGeneral.main_service}/>
 				<Sidebar/>
 		</main>
 	)
