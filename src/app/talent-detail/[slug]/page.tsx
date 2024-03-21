@@ -9,6 +9,7 @@ import { redirect } from 'next/navigation'
 import duration from 'dayjs/plugin/duration'
 
 import dayjs from 'dayjs'
+import TopTitle from '@/app/components/topTitle/TopTitle'
 type Props = {
 	params:{
 		slug:string;
@@ -51,6 +52,7 @@ export default async function page({
 	const durationjs = dayjs.duration(duration)
 	return (
 		<main id="page_entry-detail">
+				<TopTitle title='TALENT DETAIL'/>
 				<div className="confine">
 					<div className="detail-tab">
 							<div className="detail-panel">

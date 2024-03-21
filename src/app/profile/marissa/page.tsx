@@ -10,6 +10,7 @@ import Rules from './rules/Rules'
 import ServiceAssign from './serviceAssign/ServiceAssign'
 import Sidebar from './sidebar/Sidebar'
 import { fetchData } from '@/db/db'
+import TopTitle from '@/app/components/topTitle/TopTitle'
 type Props = {}
 
 interface Note {
@@ -97,6 +98,7 @@ export default async function page({}: Props) {
 	// console.log(otherService)
 	return (
 		<main id='page_profile-main'>
+				<TopTitle title='INVESTIGATOR PROFILE'/>
 				<section className="hero-section" id='intro'>
 					<article className='text-part'>
 							<img src="/decors/star-decor.png" alt="" className='star-decor'/>

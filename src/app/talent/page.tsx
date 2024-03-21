@@ -4,6 +4,7 @@ import './entry.scss'
 import Link from 'next/link'
 import { TbAccessibleOff, TbAccessibleOffFilled, TbLockAccessOff } from 'react-icons/tb'
 import { fetchData, urlFor } from '@/db/db'
+import TopTitle from '../components/topTitle/TopTitle'
 type Props = {}
 
 
@@ -49,6 +50,8 @@ export default async function Entry({}: Props) {
 	
 	return (
 		<main className="entry" id='page_entry'>
+				<TopTitle title='TALENT LIST'/>
+
 				<div className="confine">
 					<article className="section-title-card">
 						<div className="title">
