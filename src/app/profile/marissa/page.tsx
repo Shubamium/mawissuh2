@@ -8,13 +8,13 @@ import { TbPointerHeart } from 'react-icons/tb'
 import { AiOutlinePartition } from 'react-icons/ai'
 import Rules from './rules/Rules'
 import ServiceAssign from './serviceAssign/ServiceAssign'
+import Sidebar from './sidebar/Sidebar'
 type Props = {}
 
 export default function page({}: Props) {
 	return (
 		<main id='page_profile-main'>
-
-				<section className="hero-section">
+				<section className="hero-section" id='intro'>
 					<article className='text-part'>
 							<img src="/decors/star-decor.png" alt="" className='star-decor'/>
 							<div className="hero-title">
@@ -62,7 +62,7 @@ export default function page({}: Props) {
 					</figure>
 				</section>
 
-				<section className='investigator-profile'>
+				<section className='investigator-profile' id='profile'>
 
 							<div className="sub-title">
 								<div className="confine">
@@ -212,7 +212,7 @@ export default function page({}: Props) {
 				</section>
 
 
-				<section className='skills'>
+				<section className='skills' id='skills'>
 					<div className="skills-title">
 							<div className="decor-wand">
 								<div className="diamond"></div>
@@ -333,6 +333,7 @@ export default function page({}: Props) {
 				
 				<Rules/>
 				<ServiceAssign/>
+				<Sidebar/>
 		</main>
 	)
 }

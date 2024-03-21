@@ -83,7 +83,7 @@ export default function Rules({}: Props) {
 	const [activeRule,setActiveRule] = useState(0)
 	
 	return (
-		<section className='rules'>
+		<section className='rules' id='rules'>
 			<div className="rules-title confine">
 				<h2>CODE OF CONDUCT</h2>
 				<div className="box-decor">

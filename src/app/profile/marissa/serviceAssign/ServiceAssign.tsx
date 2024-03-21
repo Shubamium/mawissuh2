@@ -10,7 +10,7 @@ export default function ServiceAssign({}: Props) {
 	const [activeMenu,setActiveMenu] = useState(-1)
 	return (
 		<>
-				<div className="assign-edge">
+				<div className="assign-edge" id='service'>
 					<img src="/decors/assign-edge.png" alt="" className='decor-assign-edge t' />
 				</div>
 				<section className='service-assign'>
