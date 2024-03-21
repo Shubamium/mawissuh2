@@ -12,6 +12,30 @@ import Sidebar from './sidebar/Sidebar'
 import { fetchData } from '@/db/db'
 type Props = {}
 
+interface Note {
+  title: string;
+  description: string;
+}
+
+interface Skill {
+  name: string;
+  description: string;
+  notes: Note[];
+}
+export interface Rule {
+  title: string;
+  description: string;
+}
+
+export interface RulesCategory {
+  name: string;
+  rules: Rule[];
+}
+interface Achievement {
+  name: string;
+  description: string;
+}
+
 export default async function page({}: Props) {
 	const generalData = await fetchData<any[]>(`
 		*[_type == 'general' && preset == 'main'] {
@@ -38,6 +62,37 @@ export default async function page({}: Props) {
 			}
 		}
 	`);
+
+	const skillsList = await fetchData<Skill[]>(`
+		*[_type == 'skills'] {
+			name,
+			description,
+			notes[] {
+				title,
+				description
+			}
+		}
+	`);
+
+	const rules = await fetchData<RulesCategory[]>(
+		`
+		*[_type == 'rules'] {
+			name,
+			rules[] {
+				title,
+				description
+			}
+		}
+		`
+	)
+	const achievements = await fetchData<Achievement[]>(
+		`
+		*[_type == 'achievement'] {
+			name,
+			description
+		}
+		`
+	)
 	const mainGeneral = generalData[0] 
 	// console.log(otherService)
 	return (
@@ -186,11 +241,13 @@ export default async function page({}: Props) {
 												<p>MILESTONES</p>
 										</div>
 										<div className="log-list">
-												<div className="log">
-													<h2>ACHIEVEMENTS</h2>
-													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vene</p>
+												{achievements.map((achievement,index)=>{
+													return 	<div className="log" key={'achievement'+index}>
+													<h2>{achievement.name}</h2>
+													<p>{achievement.description}</p>
 												</div>
-												<div className="log">
+												})}
+												{/* <div className="log">
 													<h2>ACHIEVEMENTS</h2>
 													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vene</p>
 												</div>
@@ -210,7 +267,7 @@ export default async function page({}: Props) {
 												<div className="log">
 													<h2>ACHIEVEMENTS</h2>
 													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vene</p>
-												</div>
+												</div> */}
 										</div>
 								</div>
 								
@@ -268,7 +325,38 @@ export default async function page({}: Props) {
 					</div>
 
 					<div className="service-list">
-							<div className="service-card">
+							{skillsList.map((skill,skillindex)=>{
+								return 		<div className="service-card" key={'skill-card'+skillindex}>
+								<div className="service-title">
+									<div className="top-part">
+										<hr /><hr className='longer' />
+									</div>
+									<div className="title-part">
+										<h2>{skill.name}</h2>
+									</div>
+								</div>
+								<div className="description">
+									<p>{skill.description}</p>
+								</div>
+								<div className="notes">
+									{skill.notes.map((note,index)=>{
+										return <div className="note" key={'skill'+skillindex+'-note-'+index}>
+										<h2>{note.title}</h2>
+										<p> {note.description} </p>
+									</div>
+									})}
+									{/* <div className="note">
+										<h2>NOTES</h2>
+										<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor </p>
+									</div>
+									<div className="note">
+										<h2>NOTES</h2>
+										<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor </p>
+									</div> */}
+								</div>
+						</div>
+							})}
+							{/* <div className="service-card">
 									<div className="service-title">
 										<div className="top-part">
 											<hr /><hr className='longer' />
@@ -321,34 +409,7 @@ export default async function page({}: Props) {
 											<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor </p>
 										</div>
 									</div>
-							</div>
-							<div className="service-card">
-									<div className="service-title">
-										<div className="top-part">
-											<hr /><hr className='longer' />
-										</div>
-										<div className="title-part">
-											<h2>SERVICE TITLE</h2>
-										</div>
-									</div>
-									<div className="description">
-										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vene.Lorem ipsum dolor sit amet, consecte.</p>
-									</div>
-									<div className="notes">
-										<div className="note">
-											<h2>NOTES</h2>
-											<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor </p>
-										</div>
-										<div className="note">
-											<h2>NOTES</h2>
-											<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor </p>
-										</div>
-										<div className="note">
-											<h2>NOTES</h2>
-											<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor </p>
-										</div>
-									</div>
-							</div>
+							</div> */}
 					
 					
 					</div>
@@ -359,7 +420,7 @@ export default async function page({}: Props) {
 					</div>
 				</section>
 				
-				<Rules/>
+				<Rules ruleList={rules}/>
 				<ServiceAssign otherService={otherService} mainService={mainGeneral.main_service}/>
 				<Sidebar/>
 		</main>
