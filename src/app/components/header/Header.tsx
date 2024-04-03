@@ -20,7 +20,7 @@ export default function Header({}: Props) {
 				
 			</nav>
 			<div className="misc">
-					<a href="" className='attribution'>website design <br />by <b>SHUBAMIUM</b></a>
+					<a href="https://twitter.com/shubamium2" target='#_blank' className='attribution'>website design <br />by <b>SHUBAMIUM</b></a>
 					<div className="contact-list">
 						<a href="#" className='contact-link'><FaTwitter/></a>
 						<a href="#" className='contact-link'><FaTwitter/></a>

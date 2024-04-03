@@ -3,7 +3,8 @@ import './home.scss'
 export default function Home() {
   return (
     <main className={'home'} id='page_home'>
-			<div className="logo-part">
+			<div className="confine">
+				<div className="logo-part">
 				<video src="/graphics/marilogo750m.webm"  className='logo-animation glow-filter' autoPlay loop />
 			</div>
 			<article className="welcome-part glow-filter">
@@ -17,6 +18,7 @@ export default function Home() {
 				{/* <div  className='btn btn-nav-main disabled' >Worlds</div> */}
 				{/* <div  className='btn btn-nav-main disabled' >Archive</div> */}
 				{/* <div  className='btn btn-nav-main disabled' >Records</div> */}
+			</div>
 			</div>
     </main>
   );

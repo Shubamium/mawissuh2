@@ -83,3 +83,16 @@
 		}
 	}
 }
+
+@media screen and (min-width:2000px) {
+	#page_home{
+		padding-top:20vh;
+		// scale: 1.4;
+		overflow: visible;
+		.confine{
+			height: 100%;
+			scale: 1.4;
+		}
+
+	}
+}

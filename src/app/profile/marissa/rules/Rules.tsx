@@ -105,8 +105,8 @@ export default function Rules({ruleList}: Props) {
 							animate={{x:0,opacity:1}}
 							exit={{x:100,opacity:0}}
 							transition={{duration:0.5,delay:(index+1)*0.1}}
-							className="rules-card" key={'rule-card'+activeRule+'-'+index}>
-							<div className="rules-panel">               
+							className="rules-card " key={'rule-card'+activeRule+'-'+index}>
+							<div className="rules-panel shiny">               
 								<h2>{rulei.title}</h2>
 								<p>{rulei.description}</p>
 							</div>
@@ -140,12 +140,12 @@ export default function Rules({ruleList}: Props) {
 											
 											key={'rule-list'+index}
 											onClick={()=>setActiveRule(index)}
-											className={`btn btn-rule ${activeRule === index ? 'active' : ''}`}>
+											className={`btn btn-rule  ${activeRule === index ? 'active' : ''}`}>
 										<div className="text">
 												{rule.name}
 										</div>
 										<div className="decor-bottom">
-											<div className="lis l"></div>
+											<div className="lis l "></div>
 											<div className="lis r"></div>
 										</div>
 								</button>
@@ -153,7 +153,7 @@ export default function Rules({ruleList}: Props) {
 						</div>
 					</div>
 
-					<img src="/decors/decor_rule.png" alt="" className='decor-rule' />
+					<div  className='decor-rule' />
 				</div>
 			</div>
 		</section>

@@ -30,8 +30,8 @@ export default function OtherService({list,categoryId}: Props) {
 								<h2>{service.title}</h2>
 								<p>{service.description}</p>
 							</div>
-							<div className="service-detail">
-								<div className="top-detail">
+							<div className="service-detail ">
+								<div className="top-detail shiny">
 									<h2 className='price'>{service.price}</h2>
 									<div className="rate">
 										<h2>{service.rate}</h2>

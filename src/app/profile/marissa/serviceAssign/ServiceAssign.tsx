@@ -31,7 +31,7 @@ export default function ServiceAssign({mainService,otherService}: Props) {
 				<section className='service-assign'>
 						<div className="confine">
 							<div className="service-nav">
-								<button onClick={() => setActiveMenu(-1)} className={`btn btn-service ${activeMenu === -1 ? 'active' : ''}`}>
+								<button onClick={() => setActiveMenu(-1)} className={`btn btn-service shiny ${activeMenu === -1 ? 'active' : ''}`}>
 									MAIN SERVICE
 								</button>
 								{otherService.map((service,index)=>{

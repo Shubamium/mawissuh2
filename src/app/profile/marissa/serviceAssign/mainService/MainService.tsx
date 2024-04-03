@@ -41,7 +41,7 @@ export default function MainService({
 						animate={{scale:1,opacity:1}}
 						transition={{duration:0.2,delay:(index+1)*0.2}}
 						style={{transformOrigin:'left'}}
-						className="include" key={'include-list'+index}>
+						className="include shiny" key={'include-list'+index}>
 						<div className="icon">
 							<img src="/decors/include-edge.svg" alt="" className='icon-edge' />
 							<ImCheckmark/>
