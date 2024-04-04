@@ -1,11 +1,13 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { RulesCategory } from '../page'
+// import '
 type Props = {
 	ruleList:RulesCategory[]
 }
 
 import {AnimatePresence, motion } from 'framer-motion'
+import playAudio from '@/app/library/audioplayer'
 // const ruleList:RulesCategory[] = [
 // 	{
 // 		title:'Payment',
@@ -85,6 +87,9 @@ import {AnimatePresence, motion } from 'framer-motion'
 export default function Rules({ruleList}: Props) {
 	const [activeRule,setActiveRule] = useState(0)
 	
+	useEffect(()=>{
+		
+	},[activeRule])
 	return (
 		<section className='rules' id='rules'>
 			<div className="rules-title confine">
@@ -137,9 +142,33 @@ export default function Rules({ruleList}: Props) {
 						<div className="rule-list">
 							{ruleList.map((rule,index)=>{
 								return <button 
-											
 											key={'rule-list'+index}
-											onClick={()=>setActiveRule(index)}
+											onClick={()=>{
+												setActiveRule(index)
+												if(activeRule === index) return
+												playAudio({
+													src:'/sound/click1.wav',
+													loop:false,
+												}).play()
+												const swoosh = playAudio({
+													src:'/sound/swoosh.wav',
+													loop:false,
+													volume:0.2
+												})
+												swoosh.play()
+												swoosh.play(1)
+										
+											}}
+											onPointerEnter={()=>{
+												if(activeRule === index) return
+
+												playAudio({
+													src:'/sound/hoverselect1.wav',
+													loop:false,
+													volume:0.5
+												}).play()
+												
+											}}
 											className={`btn btn-rule  ${activeRule === index ? 'active' : ''}`}>
 										<div className="text">
 												{rule.name}

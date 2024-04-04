@@ -3,13 +3,18 @@ import React, { useEffect, useState } from 'react'
 import Login from './components/login/Login'
 import {motion} from 'framer-motion'
 import { usePathname } from 'next/navigation'
+import playAudio from './library/audioplayer'
 type Props = {
 	children:React.ReactNode
 }
 
 export default function Template({children}: Props) {
 		useEffect(()=>{
-			// console.log('heyaaa')
+			const swoosh = playAudio({
+				src:'/sound/deepswoosh.wav',
+				volume:0.7
+			})
+			swoosh.play(0.2)
 		},[])
 	const pathname = usePathname();
 	return (

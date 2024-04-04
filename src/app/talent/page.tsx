@@ -5,6 +5,10 @@ import Link from 'next/link'
 import { TbAccessibleOff, TbAccessibleOffFilled, TbLockAccessOff } from 'react-icons/tb'
 import { fetchData, urlFor } from '@/db/db'
 import TopTitle from '../components/topTitle/TopTitle'
+import ActiveTalentCard from './card/activeTalentCard/ActiveTalentCard'
+import ActiveTalentCardDisabled from './card/activeTalentCard/ActiveTalentCardDisabled'
+import InactiveTalentCard from './card/inactiveTalentCard/InactiveTalentCard'
+import InactiveTalentCardDisabled from './card/inactiveTalentCard/InactiveTalentCardDisabled'
 type Props = {}
 
 
@@ -67,12 +71,7 @@ export default async function Entry({}: Props) {
 						</div>
 						<div className="active-entry-list">
 								{activeList?.map((talent,index) => (
-											<Link href={`/talent-detail/${talent.slug.current}`} className="active-entry-card" key={'active-talent-card'+index}>
-													<img src={urlFor(talent.data.profile).url()} alt="" className='pfp' />
-													<span className='name'>{talent.name}</span>
-													<span className='decor_overlay'></span>
-													<span className='decor-line'></span>
-											</Link>
+											<ActiveTalentCard src={urlFor(talent.data.profile).url()} name={talent.name} href={`/talent-detail/${talent.slug.current}`} key={'active-talent-card'+index}/>
 								))}
 								{/* <Link href={'/entry-detail/user'} className="active-entry-card">
 										<img src="/graphics/entry_placeholder.webp" alt="" className='pfp' />
@@ -105,28 +104,12 @@ export default async function Entry({}: Props) {
 										<span className='decor-line'></span>
 								</Link> */}
 				
-								{new Array((Math.ceil(activeList.length / 4 )*4) - activeList.length-1).fill(0).map((denied,index)=>{
+								{new Array((Math.ceil(activeList.length / 4 )*4) - activeList.length).fill(0).map((denied,index)=>{
 									return (
-										<Link href={'#'} className="active-entry-card no-access" key={'active-denied'+index}>
-											<span className='logo'>
-												<img src="/decors/rune_higher.png" alt="" className='decor_rune' />
-												<TbLockAccessOff/>
-											</span> 
-											<span className='rune-text'>HIEROPHA</span>
-											<span className='title'>- ACCESS DENIED -</span>
-											<span className='tier-text'><span className='tier'>TIER 3</span> Clearance is needed</span>
-										</Link>
+										<ActiveTalentCardDisabled  key={'active-denied'+index}></ActiveTalentCardDisabled>
 									)
 								})}
-								<Link href={'#'} className="active-entry-card no-access">
-									<span className='logo'>
-										<img src="/decors/rune_higher.png" alt="" className='decor_rune' />
-										<TbLockAccessOff/>
-									</span>
-									<span className='rune-text'>HIEROPHA</span>
-									<span className='title'>- ACCESS DENIED -</span>
-									<span className='tier-text'><span className='tier'>TIER 3</span> Clearance is needed</span>
-								</Link>
+							
 						</div>
 
 						<div className="entry-title inactive">
@@ -135,23 +118,11 @@ export default async function Entry({}: Props) {
 						</div>
 						<div className="active-entry-list inactive">
 								{inactiveList?.map((talent,index) => {
-										return <Link href={`/talent-detail/${talent.slug.current}`} className="active-entry-card inactive" key={'inactive-talent'+index}>
-											<img src={urlFor(talent.data.profile).url()} alt="" className='pfp' />
-											<span className='name'>{talent.name}</span>
-											<span className='decor_overlay'></span>
-											<span className='decor-line'></span>
-									</Link>
+										return <InactiveTalentCard src={urlFor(talent.data.profile).url()} name={talent.name} href={`/talent-detail/${talent.slug.current}`} key={'inactive-talent'+index}/>
 								})}
 
 								{new Array((Math.ceil(inactiveList.length / 5 )*5) - inactiveList.length).fill(0).map((_,index)=>{
-										return <Link href={'/entry-detail/user'} className="active-entry-card inactive no-access" key={'inactive-denied'+index}>
-										<span className='logo'>
-											<img src="/decors/rune_higher.png" alt="" className='decor_rune' />
-											<TbLockAccessOff/>
-										</span>
-										<span className='title'>- ACCESS DENIED -</span>
-										<span className='tier-text'><span className='tier'>TIER 3</span> CLEARANCE NEEDED</span>
-									</Link>
+										return <InactiveTalentCardDisabled  key={'inactive-denied'+index}></InactiveTalentCardDisabled>
 							})}
 
 								{/* <Link href={'/entry-detail/user'} className="active-entry-card inactive">

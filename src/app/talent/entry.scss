@@ -62,7 +62,7 @@
 					flex-direction: column;
 					align-items: center;
 					transition: all 400ms ease;
-
+				
 					.pfp{
 						border-radius: 1.2em;
 						position: absolute;
@@ -141,6 +141,10 @@
 							scale: 0.7 1;
 							box-shadow: 0px 0px 4px black;
 						}
+					}
+					&:active{
+						scale: .9;
+						// rotate: 1deg;
 					}
 
 					
@@ -262,5 +266,31 @@
 				}
 			}
 		}
+	}
+}
+@media screen and (min-width:2000px) {
+	#page_entry{
+		.confine{
+			grid-template-columns: 1fr 3fr;
+			max-width: 1600px;
+			.entry-section{
+				.active-entry-list{
+					grid-template-columns:repeat(auto-fill, minmax(230px, 1fr));
+					
+					.active-entry-card{
+						min-height: 300px;
+						.name{
+							font-size: 1.6rem;
+						}
+					}
+					
+				}
+				
+			}
+		}
+		
+	}
+	#page_entry .confine .entry-section .active-entry-list.inactive{
+		grid-template-columns:repeat(auto-fill, minmax(180px, 1fr));
 	}
 }

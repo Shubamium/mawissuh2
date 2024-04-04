@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef, useState } from 'react'
 import './login.scss'
+import playAudio from '@/app/library/audioplayer'
 type Props = {}
 
 export default function Login({}: Props) {
@@ -11,6 +12,13 @@ export default function Login({}: Props) {
 	const password = useRef(null);
 	
 	useEffect(()=>{
+
+		playAudio({
+			src:'/sound/bgm.mp3',
+			loop:true,
+			destroy:false,
+			volume:0.035
+		}).play(5);
 		setTimeout(()=>{
 			const passwordTypingDelay = 100
 			const passwordTypingDuration = 1800
@@ -19,10 +27,21 @@ export default function Login({}: Props) {
 				setTypingPassword((prev) => prev + '*')
 			},passwordTypingDelay)
 
+			const type = playAudio({
+				src:'/sound/typebeep1.wav',
+				volume:0.6
+			})
+			const access = playAudio({
+				src:'/sound/access1.wav',
+				volume:1
+			})
+			type.play()
 			setTimeout(()=>{
 				clearInterval(passwordTyping)
+				type.pause()
 				setTimeout(()=>{
 					setIsLogin(true)
+					access.play()
 					setTimeout(()=>{
 						setIsEnd(true)
 					},1500)
