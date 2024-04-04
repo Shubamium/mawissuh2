@@ -10,6 +10,7 @@ import duration from 'dayjs/plugin/duration'
 
 import dayjs from 'dayjs'
 import TopTitle from '@/app/components/topTitle/TopTitle'
+import MouseMoveScale from '@/app/components/hoc/mouseMoveScale/MouseMoveScale'
 type Props = {
 	params:{
 		slug:string;
@@ -53,7 +54,7 @@ export default async function page({
 	return (
 		<main id="page_entry-detail">
 				<TopTitle title='TALENT DETAIL'/>
-				<div className="confine">
+				<MouseMoveScale className="confine">
 					<div className="detail-tab">
 							<div className="detail-panel">
 								<div className="profile">
@@ -116,7 +117,7 @@ export default async function page({
 						</div>
 						<Surveillance videoId={talentData.data.surveillance}/>
 					</div>
-				</div>
+				</MouseMoveScale>
 		</main>
 	)
 }

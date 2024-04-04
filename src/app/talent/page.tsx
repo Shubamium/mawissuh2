@@ -9,6 +9,7 @@ import ActiveTalentCard from './card/activeTalentCard/ActiveTalentCard'
 import ActiveTalentCardDisabled from './card/activeTalentCard/ActiveTalentCardDisabled'
 import InactiveTalentCard from './card/inactiveTalentCard/InactiveTalentCard'
 import InactiveTalentCardDisabled from './card/inactiveTalentCard/InactiveTalentCardDisabled'
+import MouseMoveScale from '../components/hoc/mouseMoveScale/MouseMoveScale'
 type Props = {}
 
 
@@ -56,7 +57,7 @@ export default async function Entry({}: Props) {
 		<main className="entry" id='page_entry'>
 				<TopTitle title='TALENT LIST'/>
 
-				<div className="confine">
+				<MouseMoveScale className="confine">
 					<article className="section-title-card">
 						<div className="title">
 							<h2>UNDER INVESTIGATION</h2> <BsStarFill/><BsStarFill/><BsStarFill/>
@@ -142,7 +143,7 @@ export default async function Entry({}: Props) {
 						</div>
 						
 					</section>
-				</div>
+				</MouseMoveScale>
 		</main>
 	)
 }

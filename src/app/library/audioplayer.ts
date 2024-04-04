@@ -30,10 +30,18 @@ function playAudio ({src,loop,volume = 1,destroy = 2}:PlayAudioParam) {
 		if(delay){
 			setTimeout(() => {
 				audioEl.currentTime = 0
-				audioEl.play();
+				try{
+					audioEl.play();
+				}catch(err){
+					console.log('no interaction');
+				}
 			}, delay*1000);
 		}else{
-			audioEl.play();
+			try{
+				audioEl.play();
+			}catch(err){
+				console.log('no interaction');
+			}
 		}
 	}
 	const pause = () => {

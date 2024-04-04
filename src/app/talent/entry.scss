@@ -1,11 +1,18 @@
 #page_entry{
+	min-height: 150vh;
+	width: 100%;
+	overflow-y:visible;
 	.confine{
 		margin: 0 auto;
 		max-width: 1200px;
 		display: grid;
 		grid-template-columns: 1fr 2fr;
 		gap: 1em;
+		padding: 1em;
 		padding-top: 80px;
+		// min-height: 100vh;
+		// overflow: hidden;
+		height: 100%;
 		.section-title-card{
 			// max-width: 100%;
 			// min-width: 300px;

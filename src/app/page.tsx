@@ -1,12 +1,13 @@
 import Link from 'next/link';
 import './home.scss'
+import MouseMoveScale from './components/hoc/mouseMoveScale/MouseMoveScale';
 export default function Home() {
   return (
     <main className={'home'} id='page_home'>
 			<div className="confine">
 				<div className="logo-part">
-				<video src="/graphics/marilogo750m.webm"  className='logo-animation glow-filter' autoPlay loop />
-			</div>
+					<video src="/graphics/marilogo750m.webm"  className='logo-animation glow-filter' autoPlay loop />
+				</div>
 			<article className="welcome-part glow-filter">
 				<h2> <strong>Welcome,</strong>  user001 </h2>
 				<p>This service is a luxury and <strong>NOT</strong> a requirement to be a creator!</p>
