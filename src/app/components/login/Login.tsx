@@ -10,9 +10,8 @@ export default function Login({}: Props) {
 	const [isLogin, setIsLogin] = useState(false);
 	const [isEnd, setIsEnd] = useState(false);
 	const password = useRef(null);
-	
-	useEffect(()=>{
-
+	const [hasStarted,setHasStarted] = useState(false) 
+	const login = ()=>{
 		playAudio({
 			src:'/sound/bgm.mp3',
 			loop:true,
@@ -49,9 +48,30 @@ export default function Login({}: Props) {
 			},passwordTypingDuration)
 			
 		},500)
-	},[]);
+	}
+	useEffect(()=>{
+
+		if(hasStarted){
+			login()
+		}
+	},[hasStarted]);
+
+
+	const triggerStart = ()=>{
+		if(!hasStarted){	
+			setHasStarted(true)
+		}
+	}
+	useEffect(()=>{
+		window.addEventListener('keydown',(e)=>{
+			triggerStart()	
+		})
+	},[])
 	return (
-		<div id="login" className={` ${isEnd ? 'end' : ''}`}>
+		<div id="login" className={` ${isEnd ? 'end' : ''}`}
+			onClick={triggerStart}
+			
+		>
 				<div className="login-field ">
 					{!isLogin ? (
 							<div className="form-part">
@@ -77,7 +97,7 @@ export default function Login({}: Props) {
 								</div>
 								<div className="action">
 									<div className="decor-block"></div>
-									<button className='fake-btn'>CONNECTING</button>
+									<button className='fake-btn'> {hasStarted ? 'CONNECTING' : <span>click/type anywhere to access</span> } </button>
 									<div className="decor-block"></div>
 								</div>
 						</div>
