@@ -11,6 +11,7 @@ import ServiceAssign from './serviceAssign/ServiceAssign'
 import Sidebar from './sidebar/Sidebar'
 import { fetchData } from '@/db/db'
 import TopTitle from '@/app/components/topTitle/TopTitle'
+import MainProfile from './mainProfile/MainProfile'
 type Props = {}
 
 interface Note {
@@ -32,7 +33,7 @@ export interface RulesCategory {
   name: string;
   rules: Rule[];
 }
-interface Achievement {
+export interface Achievement {
   name: string;
   description: string;
 }
@@ -148,156 +149,7 @@ export default async function page({}: Props) {
 					</figure>
 				</section>
 
-				<section className='investigator-profile' id='profile'>
-
-							<div className="sub-title">
-								<div className="confine">
-									<p className='rune-text'>HIEROPHANT</p>
-								</div>
-							</div>
-
-							<div className="profile-title confine">
-								<article>
-									<div className="main-text">
-										<div className="title">
-											<h2>INVESTIGATOR PROFILE</h2>
-										</div>
-										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-									</div>
-									<div className="additional-detail">
-										<div className="detail">
-												<h2>DETAIL</h2>
-												<p>Other Detail</p>
-											</div>
-											<div className="contact-list">
-												<a href="#" target='_blank' className='contact'>
-													<FaTwitter/>
-												</a>
-												<a href="#" target='_blank' className='contact'>
-													<FaTwitter/>
-												</a>
-												<a href="#" target='_blank' className='contact'>
-													<FaTwitter/>
-												</a>
-												<a href="#" target='_blank' className='contact'>
-													<MdAssignment/>
-												</a>
-												<a href="#" target='_blank' className='contact'>
-													<TbPointerHeart/>
-												</a>
-												<a href="#" target='_blank' className='contact'>
-													<AiOutlinePartition/>
-												</a>
-											</div>
-									</div>
-								</article>
-								<figure className='pfp'>
-										<div className="logo">
-											<img src="/graphics/profile-placeholder.jpg" alt=""  className='pfp'/>
-										</div>
-									</figure>
-							</div>
-
-							<div className="profile-info-list">
-								<div className="confine">
-									{/* <div className="info-list">
-										<div className="info">
-											<h2>NAME</h2>
-											<p>FULL NAME</p>
-										</div>
-										<div className="info">
-											<h2>NAME</h2>
-											<p>FULL NAME</p>
-										</div>
-										<div className="info">
-											<h2>NAME</h2>
-											<p>FULL NAME</p>
-										</div>
-										<div className="info">
-											<h2>NAME</h2>
-											<p>FULL NAME</p>
-										</div>
-										<div className="info">
-											<h2>NAME</h2>
-											<p>FULL NAME</p>
-										</div>
-										<div className="info">
-											<h2>NAME</h2>
-											<p>FULL NAME</p>
-										</div>
-										<div className="info">
-											<h2>NAME</h2>
-											<p>FULL NAME</p>
-										</div>
-										<div className="info">
-											<h2>NAME</h2>
-											<p>FULL NAME</p>
-										</div>
-										<div className="info">
-											<h2>NAME</h2>
-											<p>FULL NAME</p>
-										</div>
-									</div> */}
-								<div className="activity-log">
-										<div className="log-title">
-												<h2>ACTIVITY <br/> LOG</h2>
-												<p>MILESTONES</p>
-										</div>
-										<div className="log-list">
-												{achievements.map((achievement,index)=>{
-													return 	<div className="log" key={'achievement'+index}>
-													<h2>{achievement.name}</h2>
-													<p>{achievement.description}</p>
-												</div>
-												})}
-												{/* <div className="log">
-													<h2>ACHIEVEMENTS</h2>
-													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vene</p>
-												</div>
-								
-												<div className="log">
-													<h2>ACHIEVEMENTS</h2>
-													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vene</p>
-												</div>
-												<div className="log">
-													<h2>ACHIEVEMENTS</h2>
-													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vene</p>
-												</div>
-												<div className="log">
-													<h2>ACHIEVEMENTS</h2>
-													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vene</p>
-												</div>
-												<div className="log">
-													<h2>ACHIEVEMENTS</h2>
-													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vene</p>
-												</div> */}
-										</div>
-								</div>
-								
-								</div>
-							</div>
-
-							{/* <div className="additional-info">
-								<div className="confine">
-									<div className="left">
-										<div className="title">
-											<h2>ADDITIONAL INFORMATION</h2>
-											<div className="box-decor">
-												<div className="box"></div>
-												<div className="box"></div>
-												<div className="box"></div>
-											</div>
-										</div>
-										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vene.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vene.</p>
-									</div>
-									<div className="right">
-								
-									</div>
-								</div>
-							</div> */}
-
-				
-				</section>
+				<MainProfile achievementList={achievements}/>
 
 
 				<section className='skills' id='skills'>

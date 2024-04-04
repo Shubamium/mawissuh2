@@ -86,7 +86,7 @@ export default function Sidebar({}: Props) {
 											playAudio({volume:0.7,src:'/sound/swoosh.wav'}).play()
 										}}
 										onPointerEnter={()=>{
-											playAudio({volume:0.2,src:'/sound/hoverselect2.mp3'}).play()
+											playAudio({volume:0.2,src:'/sound/softclick.ogg'}).play()
 										}}
 
 								> CLOSE </motion.button>
