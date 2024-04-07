@@ -21,6 +21,7 @@ function playAudio ({src,loop,volume = 1,destroy = 2}:PlayAudioParam) {
 		setTimeout(()=>{
 			// document.removeChild(audioEl)
 			if(audioEl){
+				audioEl.pause()
 				audioEl.remove()
 			}
 		},destroy*1000)
@@ -30,18 +31,15 @@ function playAudio ({src,loop,volume = 1,destroy = 2}:PlayAudioParam) {
 		if(delay){
 			setTimeout(() => {
 				audioEl.currentTime = 0
-				try{
-					audioEl.play();
-				}catch(err){
-					console.log('no interaction');
-				}
+
+					audioEl.play().catch((e)=>{
+						console.log(e)
+					});
 			}, delay*1000);
 		}else{
-			try{
-				audioEl.play();
-			}catch(err){
-				console.log('no interaction');
-			}
+			audioEl.play().catch((e)=>{
+				console.log(e)
+			});
 		}
 	}
 	const pause = () => {

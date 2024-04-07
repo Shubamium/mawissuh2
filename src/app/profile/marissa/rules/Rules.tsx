@@ -111,7 +111,17 @@ export default function Rules({ruleList}: Props) {
 							exit={{x:100,opacity:0}}
 							transition={{duration:0.5,delay:(index+1)*0.1}}
 							className="rules-card " key={'rule-card'+activeRule+'-'+index}>
-							<div className="rules-panel shiny">               
+							<div className="rules-panel shiny"
+								onPointerEnter={()=>{
+
+									playAudio({
+										src:'/sound/swoosh2.wav',
+										loop:false,
+										volume:0.2
+									}).play()
+									
+								}}
+							>               
 								<h2>{rulei.title}</h2>
 								<p>{rulei.description}</p>
 							</div>
@@ -147,7 +157,7 @@ export default function Rules({ruleList}: Props) {
 												setActiveRule(index)
 												if(activeRule === index) return
 												playAudio({
-													src:'/sound/click1.wav',
+													src:'/sound/beebop.wav',
 													loop:false,
 												}).play()
 												const swoosh = playAudio({

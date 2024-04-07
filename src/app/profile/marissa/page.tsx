@@ -12,6 +12,7 @@ import Sidebar from './sidebar/Sidebar'
 import { fetchData } from '@/db/db'
 import TopTitle from '@/app/components/topTitle/TopTitle'
 import MainProfile from './mainProfile/MainProfile'
+import MouseMoveScale from '@/app/components/hoc/mouseMoveScale/MouseMoveScale'
 type Props = {}
 
 interface Note {
@@ -101,7 +102,7 @@ export default async function page({}: Props) {
 		<main id='page_profile-main'>
 				<TopTitle title='INVESTIGATOR PROFILE'/>
 				<section className="hero-section" id='intro'>
-					<article className='text-part'>
+					<MouseMoveScale className='text-part'>
 							<img src="/decors/star-decor.png" alt="" className='star-decor'/>
 							<div className="hero-title">
 								<div className="sub-text">
@@ -142,7 +143,7 @@ export default async function page({}: Props) {
 									</div>
 								</div> */}
 							</div>
-					</article>
+					</MouseMoveScale>
 					<figure className='img-part'>
 						<img src="/graphics/hero-art.png" alt="" className='hero-art' />
 						<img src="/decors/giant-circle.png" alt="" className='decor_spell' />
@@ -179,9 +180,9 @@ export default async function page({}: Props) {
 							</div>
 					</div>
 
-					<div className="service-list">
+					<MouseMoveScale offset={0.2} className="service-list">
 							{skillsList.map((skill,skillindex)=>{
-								return 		<div className="service-card" key={'skill-card'+skillindex}>
+								return 	<div className="service-card" key={'skill-card'+skillindex}>
 								<div className="service-title">
 									<div className="top-part">
 										<hr /><hr className='longer' />
@@ -267,7 +268,7 @@ export default async function page({}: Props) {
 							</div> */}
 					
 					
-					</div>
+					</MouseMoveScale>
 
 					<div className="decor-sides">
 						<img src="/decors/decor-side.png" alt="" className='side l' />

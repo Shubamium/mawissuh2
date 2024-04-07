@@ -1,6 +1,7 @@
 #page_entry-detail{
 	overflow: hidden;
 	padding-top: 6vh;
+	min-height: 100vh;
 	.confine{
 		max-width: min(1200px,90%);
 		margin:  1em auto;
