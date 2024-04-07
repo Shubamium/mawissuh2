@@ -5,6 +5,7 @@ import './serviceAssign.scss'
 import MainService, { MainServiceData } from './mainService/MainService'
 import OtherService from './otherService/OtherService'
 import { AnimatePresence } from 'framer-motion'
+import playAudio from '@/app/library/audioplayer'
 type Props = {
 	mainService:MainServiceData,
 	otherService:OtherServiceData[],
@@ -31,11 +32,23 @@ export default function ServiceAssign({mainService,otherService}: Props) {
 				<section className='service-assign'>
 						<div className="confine">
 							<div className="service-nav">
-								<button onClick={() => setActiveMenu(-1)} className={`btn btn-service shiny ${activeMenu === -1 ? 'active' : ''}`}>
+								<button
+								
+								onClick={() => {
+									setActiveMenu(-1)
+									playAudio({src:'/sound/beebop.wav'}).play()
+									playAudio({src:'/sound/deepswoosh.wav'}).play(0.3)
+
+								}} className={`btn btn-service shiny ${activeMenu === -1 ? 'active' : ''}`}>
 									MAIN SERVICE
 								</button>
 								{otherService.map((service,index)=>{
-									return <button onClick={() => setActiveMenu(index)} className={`btn btn-service ${activeMenu === index ? 'active' : ''}` } key={'service-nav'+index}>
+									return <button onClick={() =>{
+										setActiveMenu(index)
+										playAudio({src:'/sound/beebop.wav'}).play()
+										playAudio({src:'/sound/swoosh2.wav'}).play(0.3)
+
+									}} className={`btn btn-service ${activeMenu === index ? 'active' : ''}` } key={'service-nav'+index}>
 											{service.title}
 									</button>
 								})}

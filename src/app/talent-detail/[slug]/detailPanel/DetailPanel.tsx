@@ -11,6 +11,7 @@ import { FaDoorClosed } from 'react-icons/fa'
 import { urlFor } from '@/db/db'
 import { AnimationSequence, useAnimate } from 'framer-motion'
 import { stagger } from 'framer-motion/dom'
+import playAudio from '@/app/library/audioplayer'
 
 type Props = {
 	talentData: TalentData
@@ -284,7 +285,7 @@ export default function DetailPanel({talentData}: Props) {
 				<MouseMoveScale className="confine">
 					<div className="detail-tab">
 							<div className="detail-panel">
-								<div className="profile">
+								<div className="profile" >
 									<div className="image glow-filter">
 										<img src={urlFor(talentData.data.profile).url()} alt="" className='pfp' />
 									</div>
@@ -315,7 +316,15 @@ export default function DetailPanel({talentData}: Props) {
 
 								<div className="entry-contact">
 									{talentData.data.socials.map((social,index) => {
-										return 	<a href="#" target='_blank' className='contact' key={'talent-social'+index}>
+										return 	<a href="#"
+										onPointerEnter={()=>{
+											playAudio({src:'/sound/softclick.ogg',volume:0.6}).play()
+											// console.count('over')
+										}}
+										onClick={()=>{
+											playAudio({src:'/sound/click2.wav'}).play()
+										}}
+										target='_blank' className='contact' key={'talent-social'+index}>
 											{social.icon ? <img src={urlFor(social.icon).url()} alt="" className='contact-icon-img' />: <FaDoorClosed/>}
 										</a>
 									})}
