@@ -106,7 +106,7 @@ export default async function page({}: Props) {
           <img src="/decors/star-decor.png" alt="" className="star-decor" />
           <div className="hero-title">
             <div className="sub-text">
-              <p>INVESTIGATOR </p>
+              <p>MANAGER </p>
               <p className="rune-text"> &nbsp;ALTERNATE</p>
             </div>
             <div className="name-container">

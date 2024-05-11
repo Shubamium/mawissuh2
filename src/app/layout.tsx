@@ -1,12 +1,15 @@
 import type { Metadata } from "next";
-import {  Karla } from "next/font/google";
+import { Karla } from "next/font/google";
 import { CSSProperties } from "react";
 import Header from "./components/header/Header";
-import './globals.scss';
+import "./globals.scss";
 import Login from "./components/login/Login";
 import { AnimatePresence } from "framer-motion";
 import Presence from "./components/hoc/presence/Presence";
-const karla = Karla({ subsets: ["latin"],weight:['200','300','400','500','600','700','800'] });
+const karla = Karla({
+  subsets: ["latin"],
+  weight: ["200", "300", "400", "500", "600", "700", "800"],
+});
 
 export const metadata: Metadata = {
   title: "Mawissuh",
@@ -20,19 +23,24 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={karla.className} style={{'--fontMain':karla.style.fontFamily} as CSSProperties}>
-				<div className="main-container">
-					<Header/>
-					<Login/>
-					<div className="decor_badges">
-						<img src="/graphics/badge.png" alt="" className="decor_bg-badge" />
-						<img src="/graphics/badge.png" alt="" className="decor_bg-badge glitched" />
-					</div>
-						<Presence>
-							{children}
-						</Presence>
-				</div>
-			</body>
+      <body
+        className={karla.className}
+        style={{ "--fontMain": karla.style.fontFamily } as CSSProperties}
+      >
+        <div className="main-container">
+          <Header />
+          <Login />
+          <div className="decor_badges">
+            <img src="/graphics/badge.png" alt="" className="decor_bg-badge" />
+            <img
+              src="/graphics/badge.png"
+              alt=""
+              className="decor_bg-badge glitched"
+            />
+          </div>
+          <Presence>{children}</Presence>
+        </div>
+      </body>
     </html>
   );
 }

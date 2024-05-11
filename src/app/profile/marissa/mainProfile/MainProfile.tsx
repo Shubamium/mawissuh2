@@ -118,7 +118,7 @@ export default function MainProfile({ achievementList }: Props) {
         <article>
           <div className="main-text">
             <div className="title">
-              <h2>INVESTIGATOR PROFILE</h2>
+              <h2>MANAGER PROFILE</h2>
             </div>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
