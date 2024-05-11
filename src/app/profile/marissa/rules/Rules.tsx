@@ -1,7 +1,7 @@
 'use client'
 import React, { useEffect, useState } from 'react'
 import { RulesCategory } from '../page'
-// import '
+
 type Props = {
 	ruleList:RulesCategory[]
 }
@@ -86,10 +86,10 @@ import playAudio from '@/app/library/audioplayer'
 // ]
 export default function Rules({ruleList}: Props) {
 	const [activeRule,setActiveRule] = useState(0)
-	
 	useEffect(()=>{
 		
 	},[activeRule])
+
 	return (
 		<section className='rules' id='rules'>
 			<div className="rules-title confine">
