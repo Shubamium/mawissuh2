@@ -342,8 +342,14 @@ export default function DetailPanel({ talentData }: Props) {
             <div className="entry-status">
               <div className="status ">
                 <h2>STATUS</h2>
-                <p style={{ color: status[talentData.data.status].color }}>
-                  {status[talentData.data.status].title}
+                <p
+                  style={{
+                    color:
+                      status[talentData.data.status ?? "active"].color ??
+                      "#ffffff",
+                  }}
+                >
+                  {status[talentData.data.status ?? "active"].title}
                 </p>
               </div>
               <div className="status bottom">
